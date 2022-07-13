@@ -5,8 +5,6 @@ phases:
   pre_build:
     commands:
        - git config --global --add safe.directory /home/developer/flutter
-       - java -version
-       - flutter doctor
        
   build:
     commands:
@@ -15,11 +13,11 @@ phases:
        - flutter clean
        - flutter build apk
        
-  #post_build:
-    #commands:
-      # - command
-      # - command
-
+  post_build:
+    commands:
+       - echo 'Looking for the apk'
+       - test -f /codebuild/output/src338176332/src/git-codecommit.us-east-1.amazonaws.com/v1/repos/test_flutter/build/app/outputs/flutter-apk/app-release.apk echo "$FILE exists."
+       
 #artifacts:
   #files:
     # - location
