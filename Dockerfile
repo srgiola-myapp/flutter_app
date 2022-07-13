@@ -1,7 +1,15 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
-# Prerequisites
-RUN apt update && apt install -y curl git unzip xz-utils zip libglu1-mesa openjdk-8-jdk wget
+# Update the packages
+RUN apt update && apt install -y
+RUN apt upgrade -y
+
+# Install Dependencies
+RUN apt install wget -y
+RUN apt install unzip -y
+RUN apt-get install openjdk-8-jdk -y
+RUN apt install git -y
+RUN apt-get install curl -y
 
 # Set up new user
 RUN useradd -ms /bin/bash developer
