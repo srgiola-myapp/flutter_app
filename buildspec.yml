@@ -13,18 +13,7 @@ phases:
        - flutter clean
        - flutter build apk
        
-  post_build:
-    commands:
-       - echo 'Looking for the apk'
-       - test -f /codebuild/output/src338176332/src/git-codecommit.us-east-1.amazonaws.com/v1/repos/test_flutter/build/app/outputs/flutter-apk/app-release.apk echo "$FILE exists."
-       
-#artifacts:
-  #files:
-    # - location
-    # - location
-  #name: $(date +%Y-%m-%d)
-  #discard-paths: yes
-  #base-directory: location
-#cache:
-  #paths:
-    # - paths
+artifacts:
+  files:
+     - build/app/outputs/flutter-apk/app-release.apk
+  discard-paths: yes
