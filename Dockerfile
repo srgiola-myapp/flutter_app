@@ -31,3 +31,5 @@ RUN unzip android_sdk.zip && rm android_sdk.zip
 RUN mv -v cmdline-tools/* Android/sdk/cmdline-tools/tools/ && rm -rf cmdline-tools
 RUN cd Android/sdk/cmdline-tools/tools/bin && yes | ./sdkmanager --licenses
 RUN cd Android/sdk/cmdline-tools/tools/bin && ./sdkmanager "build-tools;29.0.2" "patcher;v4" "platform-tools" "platforms;android-29" "sources;android-29"
+
+# End of Dockerfile
